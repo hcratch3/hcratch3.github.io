@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && webpack --colors --bail",
     "clean": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist",
-    "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"Build for $(git log --pretty=format:%H -n1) [skip ci]\"",
+    "deploy": "gh-pages -d editor",
     "develop": "NODE_OPTIONS='--openssl-legacy-provider' gatsby develop",
     "prune": "./prune-gh-pages.sh",
     "i18n:push": "tx-push-src scratch-editor interface translations/en.json",
