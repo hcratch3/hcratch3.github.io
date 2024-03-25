@@ -35,9 +35,9 @@ jobs:
 #        working-directory: ./hcratch3.github.io
  #     - run: node ./scripts/original-assets.js ../scratch-gui
 #        working-directory: ./hcratch3.github.io
- #     - name: build scratch-gui
- #       run: npm run build
-#        working-directory: ./scratch-gui
+      - name: build scratch-gui
+        run: npm run build
+        working-directory: ./scratch-gui
 #      - run: cp ./hcratch3.github.io/editor/favicon.ico ./scratch-gui/build/static/favicon.ico
  #     - run: mv -T ./hcratch3.github.io/public ./public
 #      - run: mv -T ./scratch-gui/build ./public/editor
