@@ -53,7 +53,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./scratch-gui
-          destination_dir: ./
+          destination_dir: ./editor
           keep_files: false
       - name: publish
         if: ${{ !inputs.dev }}
