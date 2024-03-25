@@ -24,7 +24,7 @@ jobs:
           repository: hcratch3/scratch-gui
           #ref: ${{ inputs.branch }}
           path: ./scratch-gui
-      - run: npm install
+      - run: npm install --legacy-peer-deps
         working-directory: ./scratch-gui
       #- name: checkout hcratch3.github.io
       #  uses: actions/checkout@v3
