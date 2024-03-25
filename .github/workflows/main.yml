@@ -5,12 +5,12 @@ on:
       branch:
         description: "Branch of Xcratch"
         default: "xcratch-dev"
-        required: true
+        required: false
       dev:
         description: "Publish for development"
         type: boolean
         default: true
-        required: true
+        required: false
 
 jobs:
   build-deploy:
