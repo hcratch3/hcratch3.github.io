@@ -256,7 +256,7 @@ class Flags extends React.Component {
         window.location.href = window.location.href.replace(/flags(\.html)?/, '');
     }
     handleClickAbout () {
-        window.location.href = 'https://github.com/SheepTester/scratch-gui#readme';
+        window.location.href = 'https://github.com/hcratch3/hcratch3.github.io#readme';
     }
     handleChangeLoadGriffpatch (e) {
         this.setState({loadGriffpatch: e.target.checked});
@@ -321,7 +321,7 @@ class Flags extends React.Component {
                     accountNavOpen={false}
                     authorId="what do I put here lol"
                     authorThumbnailUrl="static/favicon.svg"
-                    authorUsername="SheepTester"
+                    authorUsername="Hcratch3"
                     canChangeLanguage={false}
                     canCreateCopy={false}
                     canCreateNew={false}
@@ -405,7 +405,7 @@ class Flags extends React.Component {
                                 previewFaqLink: (
                                     <a
                                         className={styles.faqLink}
-                                        href="https://github.com/SheepTester/htmlifier/wiki/Special-cloud-behaviours"
+                                        href="https://github.com/hcratch3.github.io/htmlifier/wiki/Special-cloud-behaviours"
                                     >
                                         <FormattedMessage
                                             defaultMessage="special cloud variable behaviours"
@@ -417,7 +417,7 @@ class Flags extends React.Component {
                                 wpw: (
                                     <a
                                         className={styles.faqLink}
-                                        href="https://sheeptester.github.io/htmlifier/"
+                                        href="https://hcratch3.github.io/htmlifier/"
                                     >
                                         <FormattedMessage
                                             defaultMessage="HTMLifier"
@@ -473,7 +473,7 @@ class Flags extends React.Component {
                                 previewFaqLink: (
                                     <a
                                         className={styles.faqLink}
-                                        href="https://github.com/SheepTester/scratch-gui/archive/gh-pages.zip"
+                                        href="https://github.com/hcratch3/hcratch3.github.io/archive/gh-pages.zip"
                                     >
                                         <FormattedMessage
                                             defaultMessage="offline mod"
@@ -497,7 +497,7 @@ class Flags extends React.Component {
                                 previewFaqLink: (
                                     <a
                                         className={styles.faqLink}
-                                        href="https://github.com/SheepTester/scratch-gui#other-features"
+                                        href="https://github.com/hcratch3/hcratch3.github.io#other-features"
                                     >
                                         <FormattedMessage
                                             defaultMessage="Github"

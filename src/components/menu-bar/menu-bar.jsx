@@ -337,7 +337,7 @@ class MenuBar extends React.Component {
         };
     }
     handleClickOfflineMod () {
-        window.location = 'https://github.com/SheepTester/scratch-gui/archive/gh-pages.zip';
+        window.location = 'https://github.com/hcratch3/hcratch3.github.io/archive/gh-pages.zip';
     }
     render () {
         const saveNowMessage = (

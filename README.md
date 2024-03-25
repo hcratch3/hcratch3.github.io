@@ -1,6 +1,6 @@
 # E羊icques&mdash;An unofficial Scratch mod
 
-The mod is available at https://sheeptester.github.io/scratch-gui/.
+The mod is available at https://hcratch3.github.io/scratch-gui/.
 
 The name is pronounced /ɛjɑŋ˧˥ˈik/ ("eh," "yahng" with a rising tone, stressed "EEK"). It comes from English "epic" but with *-cques* from Ja**cques**, producing "epicques" with stress and vowels as it would be in French. Then, I substituted the p with 羊, which is pronounced *yáng* in Mandarin. The name is quite unfriendly to pronounce and write, so any alternative spellings or pronunciations are tolerated.
 
@@ -22,7 +22,7 @@ The URLs in URL parameters should be [URI encoded](https://developer.mozilla.org
 
 In addition, you can finish the URL with a hash followed by a project ID to load a project from the Scratch website or a URI encoded URL to a project file.
 
-For example, https://sheeptester.github.io/scratch-gui/?url=https://sheeptester.github.io/javascripts/utilities.js&width=640&height=360 will load my [Utilities extension](https://scratch.mit.edu/discuss/topic/306317/) and use a 16:9 stage size.
+For example, https://hcratch3.github.io/scratch-gui/?url=https://hcratch3.github.io/javascripts/utilities.js&width=640&height=360 will load my [Utilities extension](https://scratch.mit.edu/discuss/topic/306317/) and use a 16:9 stage size.
 
 ### Other features
 
@@ -89,11 +89,11 @@ This requires you to have Git and Node.js installed.
 
 In your own node environment/application:
 ```bash
-npm install https://github.com/SheepTester/scratch-gui.git
+npm install https://github.com/hcratch3/hcratch3.github.io.git
 ```
 If you want to edit/play yourself:
 ```bash
-git clone https://github.com/SheepTester/scratch-gui.git
+git clone https://github.com/hcratch3/hcratch.github.io.git
 cd scratch-gui
 npm install
 ```
