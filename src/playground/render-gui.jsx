@@ -10,7 +10,7 @@ import log from '../lib/log.js';
 import parseOptionsFromUrl from './parse-url-options.js';
 
 const onClickLogo = () => {
-    window.location.href = './flags.html' + window.location.search + window.location.hash;
+    window.location.href = 'https://hcratch3.github.io' + window.location.search + window.location.hash;
 };
 
 const handleTelemetryModalCancel = () => {
