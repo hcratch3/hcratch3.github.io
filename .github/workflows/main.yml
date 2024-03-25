@@ -1,16 +1,16 @@
 name: Start Site
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: "Branch of Xcratch"
-        default: "xcratch-dev"
-        required: false
-      dev:
-        description: "Publish for development"
-        type: boolean
-        default: true
-        required: false
+    #inputs:
+   #   branch:
+   #     description: "Branch of Xcratch"
+#        default: "xcratch-dev"
+    #    required: false
+ #     dev:
+   #     description: "Publish for development"
+   #     type: boolean
+   #     default: true
+    #    required: false
 
 jobs:
   build-deploy:
