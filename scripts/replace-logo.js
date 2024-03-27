@@ -15,7 +15,7 @@ fs.copyFileSync(
 
 // Replace homepage.
 const renderGui = fs.readFileSync(path.resolve(GuiRoot, 'src/playground/render-gui.jsx'), 'utf-8');
-if (!renderGui.includes('xcratch')) {
+if (!renderGui.includes('hcratch3')) {
     try {
         stdout = execSync(
             `cd ${GuiRoot} && patch -p1 -N -s --no-backup-if-mismatch < ${path.resolve(__dirname, './replace-logo/logo-link.patch')}`
