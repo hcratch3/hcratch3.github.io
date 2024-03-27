@@ -44,7 +44,7 @@ jobs:
       - run: cp ./hcratch3.github.io/editor/chunks/compatibilitytesting.js ./scratch-gui/build/chunks/compatibilitytesting.js
       - run: cp ./hcratch3.github.io/editor/chunks/compatibilitytesting.js.map ./scratch-gui/build/chunks/compatibilitytesting.js.map
       - run: cp ./hcratch3.github.io/editor/chunks/player.js ./scratch-gui/build/chunks/player.js
-      - run: cp ./hcratch3.github.io/editor/chunks/player.map ./scratch-gui/build/chunks/player.js.map
+      - run: cp ./hcratch3.github.io/editor/chunks/player.js.map ./scratch-gui/build/chunks/player.js.map
       - run: mv -T ./hcratch3.github.io/public ./public
       - run: mv -T ./scratch-gui/build ./public/editor
  #     - name: checkout hcratch-doc
