@@ -31,8 +31,8 @@ jobs:
         with:
           repository: hcratch3/hcratch3.github.io
           path: ./hcratch3.github.io
-      - run: node ./scripts/replace-logo.js ../scratch-gui
-        working-directory: ./hcratch3.github.io
+  #    - run: node ./scripts/replace-logo.js ../scratch-gui
+  #      working-directory: ./hcratch3.github.io
  #     - run: node ./scripts/original-assets.js ../scratch-gui
 #        working-directory: ./hcratch3.github.io
       - name: build scratch-gui
