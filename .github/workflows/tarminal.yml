@@ -2,9 +2,9 @@ name: Build Terminal
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main  # プッシュされたブランチがmainの場合のみ実行するように設定します
+  #push:
+  #  branches:
+  #    - main  # プッシュされたブランチがmainの場合のみ実行するように設定します
 
 jobs:
   build:
