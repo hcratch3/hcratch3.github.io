@@ -31,5 +31,6 @@ jobs:
         deploy_key: ${{ secrets.ACCESS_TOKEN }}
         publish_dir: ./path/to/terminal  # ターミナルのビルドが出力されたパス
         publish_branch: gh-pages
-        
+        keep_files: true
+
 
