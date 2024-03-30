@@ -14,13 +14,13 @@ jobs:
     - name: Checkout Repository  # リポジトリをチェックアウトします
       uses: actions/checkout@v2
       with:
-     #     repository: xtermjs/xterm.js
+          repository: hcratch3/terminal#terminal
           #ref: ${{ inputs.branch }}
           path: ./tarminal
 
-    - name: Install Dependencies  # 必要な依存関係をインストールします（例えば、npm）
-      run: npm install @xterm/xterm --legacy-peer-deps
-      working-directory: ./tarminal
+    #- name: Install Dependencies  # 必要な依存関係をインストールします（例えば、npm）
+    #  run: npm install @xterm/xterm --legacy-peer-deps
+    #  working-directory: ./tarminal
 
     #- name: Build Terminal  # ターミナルをビルドします
     #  run: npm run build  # このコマンドはTTY.jsを使ったターミナルのビルドを行うものとします
