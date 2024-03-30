@@ -14,8 +14,8 @@ jobs:
     - name: Checkout Repository  # リポジトリをチェックアウトします
       uses: actions/checkout@v2
       with:
-          repository: hcratch3/terminal#terminal
-          #ref: ${{ inputs.branch }}
+          repository: hcratch3/terminal
+          ref: terminal
           path: ./tarminal
 
     #- name: Install Dependencies  # 必要な依存関係をインストールします（例えば、npm）
