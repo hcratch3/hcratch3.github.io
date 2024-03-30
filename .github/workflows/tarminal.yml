@@ -22,9 +22,9 @@ jobs:
       run: npm install --legacy-peer-deps
       working-directory: ./tarminal
 
-    - name: Build Terminal  # ターミナルをビルドします
-      run: npm run build  # このコマンドはTTY.jsを使ったターミナルのビルドを行うものとします
-      working-directory: ./tarminal
+    #- name: Build Terminal  # ターミナルをビルドします
+    #  run: npm run build  # このコマンドはTTY.jsを使ったターミナルのビルドを行うものとします
+    #  working-directory: ./tarminal
 
     - name: Upload Terminal  # ビルドされたターミナルファイルをアップロードします
       uses: actions/upload-artifact@v2
