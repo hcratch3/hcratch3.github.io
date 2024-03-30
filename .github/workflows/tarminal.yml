@@ -26,11 +26,11 @@ jobs:
     #  run: npm run build  # このコマンドはTTY.jsを使ったターミナルのビルドを行うものとします
     #  working-directory: ./tarminal
 
-    - name: Upload Terminal  # ビルドされたターミナルファイルをアップロードします
-      uses: actions/upload-artifact@v2
-      with:
-        name: terminal  # アーティファクトの名前を指定します
-        path: ./tarminal  # ターミナルのビルドが出力されたパスを指定します
+    #- name: Upload Terminal  # ビルドされたターミナルファイルをアップロードします
+    #  uses: actions/upload-artifact@v2
+    #  with:
+    #    name: terminal  # アーティファクトの名前を指定します
+    #    path: ./tarminal  # ターミナルのビルドが出力されたパスを指定します
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
