@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest  # 実行環境をUbuntuに設定します
 
     steps:
-    #- name: Checkout Repository  # リポジトリをチェックアウトします
-    #  uses: actions/checkout@v2
-    #  with:
+    - name: Checkout Repository  # リポジトリをチェックアウトします
+      uses: actions/checkout@v2
+      with:
      #     repository: xtermjs/xterm.js
           #ref: ${{ inputs.branch }}
-      #    path: ./tarminal
+          path: ./tarminal
 
     - name: Install Dependencies  # 必要な依存関係をインストールします（例えば、npm）
       run: npm install @xterm/xterm --legacy-peer-deps
