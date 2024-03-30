@@ -13,25 +13,32 @@ jobs:
     steps:
     - name: Checkout Repository  # リポジトリをチェックアウトします
       uses: actions/checkout@v2
+      with:
+          repository: chjj/tty.js
+          #ref: ${{ inputs.branch }}
+          path: ./tarminal
 
     - name: Install Dependencies  # 必要な依存関係をインストールします（例えば、npm）
-      run: npm install tty.js --save --legacy-peer-deps
+      run: npm install --legacy-peer-deps
+      working-directory: ./tarminal
 
     - name: Build Terminal  # ターミナルをビルドします
       run: npm run build  # このコマンドはTTY.jsを使ったターミナルのビルドを行うものとします
+      working-directory: ./tarminal
 
     - name: Upload Terminal  # ビルドされたターミナルファイルをアップロードします
       uses: actions/upload-artifact@v2
       with:
         name: terminal  # アーティファクトの名前を指定します
-        path: path/to/terminal  # ターミナルのビルドが出力されたパスを指定します
+        path: ./tarminal  # ターミナルのビルドが出力されたパスを指定します
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACCESS_TOKEN }}
-        publish_dir: ./path/to/terminal  # ターミナルのビルドが出力されたパス
+        publish_dir: ./tarminal  # ターミナルのビルドが出力されたパス
         publish_branch: gh-pages
+        destination_dir: ./terminal
         keep_files: true
 
 
