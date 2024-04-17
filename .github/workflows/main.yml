@@ -59,7 +59,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          destination_dir: ./
+          destination_dir: ./scratch
           keep_files: true
       - name: publish
         if: ${{ !inputs.dev }}
@@ -67,5 +67,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          destination_dir: .
+          destination_dir: ./scratch
           keep_files: true
