@@ -90,7 +90,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const onClickLogo = () => {
-  window.location = 'https://scratch.mit.edu';
+  window.location = 'https://hcratch.github.io/scratch/';
 };
 const handleTelemetryModalCancel = () => {
   (0,_lib_log_js__WEBPACK_IMPORTED_MODULE_6__["default"])('User canceled telemetry modal');
