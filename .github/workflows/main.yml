@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: ./scratch
-          keep_files: true
+          keep_files: false
       - name: publish
         if: ${{ !inputs.dev }}
         uses: peaceiris/actions-gh-pages@v3
@@ -56,4 +56,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           destination_dir: ./scratch
-          keep_files: true
+          keep_files: false
