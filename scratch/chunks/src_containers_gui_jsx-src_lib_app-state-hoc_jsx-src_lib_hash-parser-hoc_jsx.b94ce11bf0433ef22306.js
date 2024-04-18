@@ -6529,76 +6529,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_6__.Component {
       src: _lib_assets_icon_tutorials_svg__WEBPACK_IMPORTED_MODULE_34__
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("span", {
       className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().tutorialsLabel)
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__.FormattedMessage, ariaMessages.tutorials))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().accountInfoGroup)
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem)
-    }, this.props.canSave && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_save_status_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], null)), this.props.sessionExists ? this.props.username ?
-    /*#__PURE__*/
-    // ************ user is logged in ************
-    react__WEBPACK_IMPORTED_MODULE_6__.createElement(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("a", {
-      href: "/mystuff/"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().mystuffButton))
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("img", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().mystuffIcon),
-      src: _icon_mystuff_png__WEBPACK_IMPORTED_MODULE_35__
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_containers_account_nav_jsx__WEBPACK_IMPORTED_MODULE_20__["default"], {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable), {
-        [(_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().active)]: this.props.accountMenuOpen
-      }),
-      isOpen: this.props.accountMenuOpen,
-      isRtl: this.props.isRtl,
-      menuBarMenuClassName: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarMenu)),
-      onClick: this.props.onClickAccount,
-      onClose: this.props.onRequestCloseAccount,
-      onLogOut: this.props.onLogOut
-    })) :
-    /*#__PURE__*/
-    // ********* user not logged in, but a session exists
-    // ********* so they can choose to log in
-    react__WEBPACK_IMPORTED_MODULE_6__.createElement(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable)),
-      key: "join",
-      onMouseUp: this.props.onOpenRegistration
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__.FormattedMessage, {
-      defaultMessage: "Join Scratch",
-      id: "gui.menuBar.joinScratch"
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable)),
-      key: "login",
-      onMouseUp: this.props.onClickLogin
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__.FormattedMessage, {
-      defaultMessage: "Sign in",
-      id: "gui.menuBar.signIn"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_login_dropdown_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarMenu)),
-      isOpen: this.props.loginMenuOpen,
-      isRtl: this.props.isRtl,
-      renderLogin: this.props.renderLogin,
-      onClose: this.props.onRequestCloseLogin
-    }))) :
-    /*#__PURE__*/
-    // ******** no login session is available, so don't show login stuff
-    react__WEBPACK_IMPORTED_MODULE_6__.createElement(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, null, this.props.showComingSoon ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(react__WEBPACK_IMPORTED_MODULE_6__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(MenuBarItemTooltip, {
-      id: "mystuff"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().mystuffButton))
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("img", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().mystuffIcon),
-      src: _icon_mystuff_png__WEBPACK_IMPORTED_MODULE_35__
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(MenuBarItemTooltip, {
-      id: "account-nav",
-      place: this.props.isRtl ? 'right' : 'left'
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().hoverable), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().accountNavMenu))
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("img", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().profileIcon),
-      src: _icon_profile_png__WEBPACK_IMPORTED_MODULE_36__
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("span", null, 'scratch-cat'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("img", {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().dropdownCaretIcon),
-      src: _dropdown_caret_svg__WEBPACK_IMPORTED_MODULE_38__
-    })))) : [])), aboutButton);
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__.FormattedMessage, ariaMessages.tutorials))))), aboutButton);
   }
 }
 MenuBar.propTypes = {
@@ -10085,7 +10016,7 @@ const StageHeaderComponent = function StageHeaderComponent(props) {
     const stageButton = showBranding ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
       className: (_stage_header_css__WEBPACK_IMPORTED_MODULE_15___default().embedScratchLogo)
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("a", {
-      href: "https://scratch.mit.edu",
+      href: "https://hcratch3.github.io/scratch",
       rel: "noopener noreferrer",
       target: "_blank"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("img", {
@@ -42376,4 +42307,4 @@ module.exports = /*#__PURE__*/JSON.parse('[{"name":"Abby","tags":["people","pers
 /***/ })
 
 }]);
-//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.f3dbd6ffc25351b37172.js.map
+//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.b94ce11bf0433ef22306.js.map
