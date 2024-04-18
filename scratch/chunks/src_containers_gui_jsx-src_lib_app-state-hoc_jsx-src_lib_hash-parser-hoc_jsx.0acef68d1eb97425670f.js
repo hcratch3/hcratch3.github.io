@@ -6485,38 +6485,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_6__.Component {
       projectTitle: this.props.projectTitle,
       userId: this.props.authorId,
       username: this.props.authorUsername
-    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem))
-    }, this.props.canShare ? (this.props.isShowingProject || this.props.isUpdating) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_containers_project_watcher_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-      onDoneUpdating: this.props.onSeeCommunity
-    }, waitForUpdate => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_share_button_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarButton),
-      isShared: this.props.isShared
-      /* eslint-disable react/jsx-no-bind */,
-      onClick: () => {
-        this.handleClickShare(waitForUpdate);
-      }
-      /* eslint-enable react/jsx-no-bind */
-    })) : this.props.showComingSoon ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(MenuBarItemTooltip, {
-      id: "share-button"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_share_button_jsx__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarButton)
-    })) : [], this.props.canRemix ? remixButton : []), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarItem), (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().communityButtonWrapper))
-    }, this.props.enableCommunity ? (this.props.isShowingProject || this.props.isUpdating) && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_containers_project_watcher_jsx__WEBPACK_IMPORTED_MODULE_15__["default"], {
-      onDoneUpdating: this.props.onSeeCommunity
-    }, waitForUpdate => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_community_button_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarButton)
-      /* eslint-disable react/jsx-no-bind */,
-      onClick: () => {
-        this.handleClickSeeCommunity(waitForUpdate);
-      }
-      /* eslint-enable react/jsx-no-bind */
-    })) : this.props.showComingSoon ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(MenuBarItemTooltip, {
-      id: "community-button"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_community_button_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().menuBarButton)
-    })) : []), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_divider_divider_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement(_divider_divider_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], {
       className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().divider))
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__.createElement("div", {
       className: (_menu_bar_css__WEBPACK_IMPORTED_MODULE_33___default().fileGroup)
@@ -42307,4 +42276,4 @@ module.exports = /*#__PURE__*/JSON.parse('[{"name":"Abby","tags":["people","pers
 /***/ })
 
 }]);
-//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.b94ce11bf0433ef22306.js.map
+//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.0acef68d1eb97425670f.js.map
