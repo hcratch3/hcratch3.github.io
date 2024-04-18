@@ -4573,9 +4573,7 @@ const GUIComponent = props => {
       className: tabClassNames.tabPanel
     }, soundsTabVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_containers_sound_tab_jsx__WEBPACK_IMPORTED_MODULE_13__["default"], {
       vm: vm
-    }) : null)), backpackVisible ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_containers_backpack_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], {
-      host: backpackHost
-    }) : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    }) : null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_box_box_jsx__WEBPACK_IMPORTED_MODULE_16__["default"], {
       className: classnames__WEBPACK_IMPORTED_MODULE_0___default()((_gui_css__WEBPACK_IMPORTED_MODULE_32___default().stageAndTargetWrapper), (_gui_css__WEBPACK_IMPORTED_MODULE_32___default())[stageSize])
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_containers_stage_wrapper_jsx__WEBPACK_IMPORTED_MODULE_14__["default"], {
       isFullScreen: isFullScreen,
@@ -42276,4 +42274,4 @@ module.exports = /*#__PURE__*/JSON.parse('[{"name":"Abby","tags":["people","pers
 /***/ })
 
 }]);
-//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.0acef68d1eb97425670f.js.map
+//# sourceMappingURL=src_containers_gui_jsx-src_lib_app-state-hoc_jsx-src_lib_hash-parser-hoc_jsx.1ad881144743b1c44164.js.map
