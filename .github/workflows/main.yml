@@ -25,7 +25,9 @@ jobs:
           #ref: ${{ inputs.branch }}
           #path: ./scratch-gui
       - run: git clone --depth 1 https://github.com/hcratch3/hcratch-vm.git
+        working-directory: ./scratch-vm
       - run: git clone --depth 1 https://github.com/hcratch3/scratch-gui.git
+        working-directory: ./scratch-gui
       - run: cd scratch-vm
       - run: npm install
       - run: npm link
