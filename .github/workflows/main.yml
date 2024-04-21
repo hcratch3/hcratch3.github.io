@@ -34,12 +34,12 @@ jobs:
         #working-directory: ./scratch-vm
       #- run: git clone --depth 1 https://github.com/hcratch3/scratch-gui.git
         #working-directory: ./scratch-gui
-      - run: cd scratch-vm
+      #- run: cd scratch-vm
       - run: npm install
         working-directory: ./scratch-vm
       - run: npm link
         working-directory: ./scratch-vm
-      - run: cd ../scratch-gui
+      #- run: cd ../scratch-gui
       - run: npm install
         working-directory: ./scratch-gui
       - run: npm link scratch-vm
