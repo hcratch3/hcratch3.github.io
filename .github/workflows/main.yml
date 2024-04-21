@@ -18,14 +18,23 @@ jobs:
     steps:
       - name: Inputs
         run: echo "${{ toJSON(inputs) }}"
-      - name: checkout scratch-gui
-        uses: actions/checkout@v3
-        with:
-          repository: hcratch3/scratch-gui
+      #- name: checkout scratch-gui
+        #uses: actions/checkout@v3
+        #with:
+          #repository: hcratch3/scratch-gui
           #ref: ${{ inputs.branch }}
-          path: ./scratch-gui
-      - run: npm install --legacy-peer-deps
-        working-directory: ./scratch-gui
+          #path: ./scratch-gui
+      - run: git clone --depth 1 https://github.com/hcratch3/hcratch-vm.git
+      - run: git clone --depth 1 https://github.com/hcratch3/scratch-gui.git
+      - run: cd scratch-vm
+      - run: npm install
+      - run: npm link
+      - run: cd ../scratch-gui
+      - run: npm install
+      - run: npm link scratch-vm
+      #- run: npm start
+      #- run: npm install --legacy-peer-deps
+      #  working-directory: ./scratch-gui
       - name: checkout hcratch3.github.io
         uses: actions/checkout@v3
         with:
