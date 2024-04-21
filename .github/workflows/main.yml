@@ -36,10 +36,14 @@ jobs:
         #working-directory: ./scratch-gui
       - run: cd scratch-vm
       - run: npm install
+        working-directory: ./scratch-vm
       - run: npm link
+        working-directory: ./scratch-vm
       - run: cd ../scratch-gui
       - run: npm install
+        working-directory: ./scratch-gui
       - run: npm link scratch-vm
+        working-directory: ./scratch-gui
       #- run: npm start
       #- run: npm install --legacy-peer-deps
       #  working-directory: ./scratch-gui
