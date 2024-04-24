@@ -56,7 +56,7 @@ jobs:
        # working-directory: ./scratch-gui
     #  - run: touch ./node_modules/scratch-vm/dist/web/extension-worker.js
        # working-directory: ./scratch-gui
-      - run: cp .hcratch3.github.io/extension-worker.js ../scratch-gui/node_modules/scratch-vm/dist/web/extension-worker.js
+      - run: cp ./hcratch3.github.io/extension-worker.js ../scratch-gui/node_modules/scratch-vm/dist/web/extension-worker.js
         #working-directory: ./hcratch3.github.io
   #    - run: node ./scripts/replace-logo.js ../scratch-gui
   #      working-directory: ./hcratch3.github.io
