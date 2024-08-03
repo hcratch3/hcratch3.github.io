@@ -1,0 +1,43 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # プライベートリポジトリを指定
+          repository: hcratch3/scratch-gui
+          # checkout 先のパスを指定
+          path: ./scratch-gui
+
+      - name: Setup Node
+        uses: actions/setup-node@v4.0.3
+        #with:
+          #node-version: '20'
+          #cache: 'npm'
+
+      - name: Install
+        run: npm install
+        working-directory: ./scratch-gui
+        
+      - name: Build
+        run: npm run build
+        working-directory: ./scratch-gui
+
+      - run: mv -T ./scratch-gui/build ./public/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
