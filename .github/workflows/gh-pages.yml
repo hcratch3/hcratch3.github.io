@@ -2,16 +2,6 @@ name: GitHub Pages
 
 on:
   workflow_dispatch:
-    inputs:
-      checkout_ref:
-        description: "Checkout reference of Xcratch"
-        default: "xcratch-published"
-        required: true
-      dev:
-        description: "Publish for development"
-        type: boolean
-        default: true
-        required: true
 
 jobs:
   deploy:
