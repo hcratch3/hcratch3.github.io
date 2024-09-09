@@ -22,6 +22,10 @@ jobs:
           #node-version: '20'
           #cache: 'npm'
 
+      - name: Install uglifyjs-webpack-plugin
+        run: npm i uglifyjs-webpack-plugin
+        working-directory: ./scratch-gui
+
       - name: Install
         run: npm install
         working-directory: ./scratch-gui
