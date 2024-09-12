@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL Controller</title>
+    <title>WebGL Scene</title>
     <style>
         body, html {
             margin: 0;
@@ -14,8 +14,6 @@
         }
         canvas {
             display: block;
-            width: 100vw;
-            height: 100vh;
         }
     </style>
 </head>
@@ -23,70 +21,17 @@
     <canvas id="webglCanvas"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // WebGL初期化
+        // Three.jsの初期化
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('webglCanvas')});
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('webglCanvas') });
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        const shapes = [];
+        // 立体の保持
+        const shapes = {};
 
+        // カメラの初期位置
         camera.position.z = 5;
-
-        // 背景色を変更
-        function setBackgroundColor(color) {
-            scene.background = new THREE.Color(color);
-        }
-
-        // 立体を生成
-        function createShape(type, size) {
-            let geometry;
-            if (type === 'sphere') {
-                geometry = new THREE.SphereGeometry(size, 32, 32);
-            } else if (type === 'cube') {
-                geometry = new THREE.BoxGeometry(size, size, size);
-            } else if (type === 'cone') {
-                geometry = new THREE.ConeGeometry(size, size * 2, 32);
-            }
-
-            const material = new THREE.MeshBasicMaterial({color: 0xffff00});
-            const shape = new THREE.Mesh(geometry, material);
-            scene.add(shape);
-            shapes.push(shape);
-        }
-
-        // 立体を移動
-        function moveShape(direction, distance) {
-            const shape = shapes[shapes.length - 1]; // 最後に生成された立体を操作
-            if (!shape) return;
-
-            if (direction === 'up') {
-                shape.position.y += distance;
-            } else if (direction === 'down') {
-                shape.position.y -= distance;
-            } else if (direction === 'left') {
-                shape.position.x -= distance;
-            } else if (direction === 'right') {
-                shape.position.x += distance;
-            } else if (direction === 'forward') {
-                shape.position.z -= distance;
-            } else if (direction === 'backward') {
-                shape.position.z += distance;
-            }
-        }
-
-        // BroadcastChannelでScratchからのメッセージを受信
-        const channel = new BroadcastChannel('webgl_channel');
-        channel.onmessage = (event) => {
-            const {type, color, shape, size, direction, distance} = event.data;
-            if (type === 'setBackgroundColor') {
-                setBackgroundColor(color);
-            } else if (type === 'createShape') {
-                createShape(shape, size);
-            } else if (type === 'moveShape') {
-                moveShape(direction, distance);
-            }
-        };
 
         // アニメーションループ
         function animate() {
@@ -94,6 +39,126 @@
             renderer.render(scene, camera);
         }
         animate();
+
+        // メッセージ受信用のBroadcastChannel
+        const channel = new BroadcastChannel('webgl_channel');
+
+        // 背景色を変更する関数
+        function setBackgroundColor(color) {
+            scene.background = new THREE.Color(color);
+        }
+
+        // 立体を生成する関数
+        function createShape(name, type, size) {
+            let geometry;
+
+            switch (type) {
+                case 'sphere':
+                    geometry = new THREE.SphereGeometry(size, 32, 32);
+                    break;
+                case 'cube':
+                    geometry = new THREE.BoxGeometry(size, size, size);
+                    break;
+                case 'cone':
+                    geometry = new THREE.ConeGeometry(size, size * 2, 32);
+                    break;
+                default:
+                    console.error('Unknown shape type: ', type);
+                    return;
+            }
+
+            const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+            const shape = new THREE.Mesh(geometry, material);
+            scene.add(shape);
+            shapes[name] = shape;
+        }
+
+        // 立体の色を変更する関数
+        function setShapeColor(name, color) {
+            if (shapes[name]) {
+                shapes[name].material.color.set(color);
+            }
+        }
+
+        // 立体を移動する関数
+        function moveShape(name, direction, distance) {
+            const shape = shapes[name];
+            if (!shape) return;
+
+            switch (direction) {
+                case 'up':
+                    shape.position.y += distance;
+                    break;
+                case 'down':
+                    shape.position.y -= distance;
+                    break;
+                case 'left':
+                    shape.position.x -= distance;
+                    break;
+                case 'right':
+                    shape.position.x += distance;
+                    break;
+                case 'forward':
+                    shape.position.z -= distance;
+                    break;
+                case 'backward':
+                    shape.position.z += distance;
+                    break;
+                default:
+                    console.error('Unknown direction: ', direction);
+            }
+        }
+
+        // カメラを移動する関数
+        function moveCamera(axis, amount) {
+            switch (axis) {
+                case 'x':
+                    camera.position.x += amount;
+                    break;
+                case 'y':
+                    camera.position.y += amount;
+                    break;
+                case 'z':
+                    camera.position.z += amount;
+                    break;
+                default:
+                    console.error('Unknown axis: ', axis);
+            }
+        }
+
+        // BroadcastChannelでメッセージを受信したときの処理
+        channel.onmessage = (event) => {
+            const message = event.data;
+
+            switch (message.type) {
+                case 'setBackgroundColor':
+                    setBackgroundColor(message.color);
+                    break;
+                case 'createShape':
+                    createShape(message.name, message.shape, message.size);
+                    break;
+                case 'setShapeColor':
+                    setShapeColor(message.name, message.color);
+                    break;
+                case 'moveShape':
+                    moveShape(message.name, message.direction, message.distance);
+                    break;
+                case 'moveCamera':
+                    moveCamera(message.axis, message.amount);
+                    break;
+                default:
+                    console.error('Unknown message type: ', message.type);
+            }
+        };
+
+        // ウィンドウのリサイズ処理
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
     </script>
 </body>
 </html>
