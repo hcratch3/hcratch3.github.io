@@ -2,10 +2,6 @@ name: Start Site
 on:
   workflow_dispatch:
     inputs:
-      checkout_ref:
-        description: "Hcratch3のチェックアウトリファレンス"
-        default: "hcratch3の公開"
-        required: true
       dev:
         description: "開発用に公開する"
         type: boolean
@@ -16,13 +12,10 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Inputs
-        run: echo "${{ toJSON(inputs) }}"
       - name: checkout scratch-gui
         uses: actions/checkout@v4
         with:
           repository: hcratch3/scratch-gui
-          ref: ${{ inputs.checkout_ref }}
           path: ./scratch-gui
       - name: setup node
         uses: actions/setup-node@v4
