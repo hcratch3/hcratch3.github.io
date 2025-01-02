@@ -1,0 +1,65 @@
+name: Start Site
+on:
+  workflow_dispatch:
+    inputs:
+      checkout_ref:
+        description: "Hcratch3のチェックアウトリファレンス"
+        default: "hcratch3の公開"
+        required: true
+      dev:
+        description: "開発用に公開する"
+        type: boolean
+        default: false
+        required: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inputs
+        run: echo "${{ toJSON(inputs) }}"
+      - name: checkout scratch-gui
+        uses: actions/checkout@v4
+        with:
+          repository: hcratch3/scratch-gui
+          ref: ${{ inputs.checkout_ref }}
+          path: ./scratch-gui
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./scratch-gui/.nvmrc
+      - run: npm ci
+        working-directory: ./scratch-gui
+      - name: checkout hcratch3.github.io
+        uses: actions/checkout@v4
+        with:
+          repository: hcratch3/hcratch3.github.io
+          path: ./hcratch3.github.io
+      - name: build scratch-gui
+        run: npm run build
+        working-directory: ./scratch-gui
+      - run: cp ./hcratch3.github.io/editor/favicon.ico ./scratch-gui/build/static/favicon.ico
+      - run: mv -T ./hcratch3.github.io/public ./public
+      - run: mv -T ./scratch-gui/build ./public/editor
+      - name: checkout xcratch-doc
+        uses: actions/checkout@v4
+        with:
+          repository: hcratch3/hcratch3-doc
+          path: ./hcratch3-doc
+      - run: mv -T ./hcratch3-doc/docs ./public/docs
+      - name: publish for dev
+        if: ${{ inputs.dev }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: ./dev
+          keep_files: false
+      - name: publish
+        if: ${{ !inputs.dev }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: .
+          keep_files: true
