@@ -25,6 +25,8 @@ jobs:
         working-directory: ./scratch-gui
       - run: npm ci
         working-directory: ./scratch-gui
+      - run: npm install && npm run build
+        working-directory: ./scratch-gui/node_modules/scratch-vm
       - name: checkout hcratch3.github.io
         uses: actions/checkout@v4
         with:
