@@ -7,6 +7,8 @@ on:
         type: boolean
         default: false
         required: true
+  repository_dispatch:
+    types: [change_scratch]
 
 jobs:
   build-deploy:
