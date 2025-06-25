@@ -29,6 +29,9 @@ jobs:
         working-directory: ./scratch-gui
       - run: npm ci
         working-directory: ./scratch-gui
+      - name: Install tosh2 from GitHub
+        working-directory: ./scratch-gui # scratch-gui ディレクトリに移動
+        run: npm install https://github.com/tjvr/tosh2.git # HTTPS経由でtosh2をインストール
       - name: checkout hcratch3.github.io
         uses: actions/checkout@v4
         with:
