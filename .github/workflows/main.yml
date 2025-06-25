@@ -31,10 +31,9 @@ jobs:
         working-directory: ./scratch-gui
       - name: Install tosh2 from GitHub
         working-directory: ./scratch-gui # scratch-gui ディレクトリに移動
-        run: |
-          git clone --recursive https://github.com/tjvr/tosh2
+        run: | # echo ';window.P = P' >> phosphorus/phosphorus.js
+          git clone --recursive https://github.com/hcratch3/tosh.git
           cd tosh2
-          echo ';window.P = P' >> phosphorus/phosphorus.js
           yarn
           yarn grammar && yarn test
       - name: checkout hcratch3.github.io
